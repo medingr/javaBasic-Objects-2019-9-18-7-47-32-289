@@ -20,7 +20,8 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final Optional<Boolean> expected = Optional.empty();
+        final Optional<Boolean> expected = Optional.of(Boolean.TRUE);
+        //sameReference was declared with Object objectReference thus TRUE
         // --end-->
 
         assertEquals(expected.get(), referenceToSameObject);
@@ -36,7 +37,8 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final Optional<Boolean> expected = Optional.empty();
+        final Optional<Boolean> expected = Optional.of(Boolean.FALSE);
+        //goodDay and sameDay are two different objects thus FALSE
         // --end-->
 
         assertEquals(expected.get(), referenceToSameObject);
@@ -67,7 +69,7 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final int expected = 0;
+        final int expected = 5;
         // --end-->
 
         assertEquals(expected, value);
@@ -89,7 +91,7 @@ class ObjectTest {
         // TODO: please modify the following code to pass the test.
         // You can only choose from `sameReference` and `instanceCreatedByMethod`
         // <--start
-        final Object expected = null;
+        final Object expected = sameReference;
         // --end-->
 
         assertEquals(expected, objectReference);
@@ -103,7 +105,7 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expected = null;
+        final String expected = "Updated Name";
         // --end-->
 
         assertEquals(expected, instance.getName());
@@ -117,7 +119,8 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test. You should write the result directly.
         // <--start
-        final String expected = null;
+        final String expected = "methodWithOneParameter(Object)";
+        //explicit return methodWithOneParameter(Object) inside method methodWithOneParameter
         // --end-->
 
         assertEquals(expected, actual);
@@ -133,7 +136,8 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test. You should write the result directly.
         // <--start
-        final String expected = null;
+        final String expected = "methodWithTwoParameters(String, Integer)";
+        //explicit return methodWithTwoParameters(String, Integer) inside method methodWithTwoParameters
         // --end-->
 
         assertEquals(expected, actual);
@@ -145,7 +149,7 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expected = null;
+        final String expected = "Untitled";
         // --end-->
 
         assertEquals(expected, instance.getName());
@@ -160,7 +164,7 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String[] expected = {};
+        final String[] expected = null;
         // --end-->
 
         assertArrayEquals(expected, logs);
@@ -172,7 +176,7 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expected = null;
+        final String expected = "1\\n+ 2\\n + 3\\n";
         // --end-->
 
         assertEquals(expected, message);
@@ -186,7 +190,7 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expected = null;
+        final String expected = "1\n2\n3\n";
         // --end-->
 
         assertEquals(expected, message);

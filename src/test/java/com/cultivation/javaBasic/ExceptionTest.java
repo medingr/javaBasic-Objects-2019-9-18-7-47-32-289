@@ -33,7 +33,7 @@ class ExceptionTest {
             throw new StringFormatException("the message", innerError);
         } catch (StringFormatException error) {
             assertEquals("the message", error.getMessage());
-            assertEquals(innerError, error.getCause());
+              assertEquals(innerError, error.getCause());
         }
     }
 
@@ -43,7 +43,7 @@ class ExceptionTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final int expectedResult = Integer.MAX_VALUE;
+        final int expectedResult = 0;
         // --end-->
 
         assertEquals(expectedResult, confusedResult);
@@ -60,7 +60,7 @@ class ExceptionTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final Optional<Boolean> expected = Optional.empty();
+        final Optional<Boolean> expected = Optional.of(Boolean.TRUE);
         // --end-->
 
         assertEquals(expected.get(), closableStateReference.isClosed());
