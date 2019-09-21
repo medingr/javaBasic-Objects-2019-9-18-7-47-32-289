@@ -14,9 +14,10 @@ class InheritanceTest {
     void should_be_derived_from_object_class() {
         // TODO: please modify the following code to pass the test
         // <--start
-        final Class<?> expectedSuperClass = null;
+        final Class<?> expectedSuperClass = Object.class;
         // --end-->
-
+        //https://www.geeksforgeeks.org/inheritance-in-java/
+        //n the absence of any other explicit superclass, every class is implicitly a subclass of Object class.
         assertEquals(expectedSuperClass, SimpleEmptyClass.class.getSuperclass());
     }
 
@@ -26,7 +27,8 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String[] expected = {};
+         final String[] expected = {"SuperClassWithDefaultConstructor.constructor()",
+                 "DerivedFromSuperClassWithDefaultConstructor.constructor()"};
         // --end-->
 
         String[] logs = instance.getLogs();
@@ -40,7 +42,8 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String[] expected = {};
+        final String[] expected = {"DerivedFromSuperClassWithDefaultConstructor.constructor()",
+                "DerivedFromSuperClassWithDefaultConstructor.constructor(int)"};
         // --end-->
 
         String[] logs = instance.getLogs();
@@ -54,7 +57,8 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String[] expected = {};
+        SuperClassWithDefaultConstructor superC = new SuperClassWithDefaultConstructor();
+        final String[] expected = superC.getLogs();
         // --end-->
 
         String[] logs = instance.getLogs();
