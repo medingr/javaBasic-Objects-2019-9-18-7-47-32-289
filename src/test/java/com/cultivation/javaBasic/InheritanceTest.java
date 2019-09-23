@@ -42,7 +42,8 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String[] expected = {"DerivedFromSuperClassWithDefaultConstructor.constructor()",
+        final String[] expected = {"SuperClassWithDefaultConstructor.constructor()",
+                "DerivedFromSuperClassWithDefaultConstructor.constructor()",
                 "DerivedFromSuperClassWithDefaultConstructor.constructor(int)"};
         // --end-->
 
@@ -59,6 +60,7 @@ class InheritanceTest {
         // <--start
         SuperClassWithDefaultConstructor superC = new SuperClassWithDefaultConstructor();
         final String[] expected = superC.getLogs();
+
         // --end-->
 
         String[] logs = instance.getLogs();
@@ -72,7 +74,9 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expectedName = null;
+        final String expectedName = "DerivedFromBaseClassForOverriding";
+        //BaseClassForOverriding fail
+        //changed to DerivedFromBaseClassForOverriding
         // --end-->
 
         assertEquals(expectedName, instance.getName());
@@ -84,7 +88,8 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expectedName = null;
+        final String expectedName = "BaseClassForOverriding->DerivedFromBaseClassForOverridingCallingSuper";
+        //since method overriden return return super.getName() + "->DerivedFromBaseClassForOverridingCallingSuper"
         // --end-->
 
         assertEquals(expectedName, instance.getName());
@@ -106,7 +111,7 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final Optional<Boolean> expected = Optional.empty();
+        final Optional<Boolean> expected = Optional.of(Boolean.TRUE);
         // --end-->
 
         assertEquals(expected.get(), willThrow);
@@ -120,7 +125,8 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expected = null;
+        final String expected = "NestedDerivedClassWithName";
+        //initially put BaseClassWithName failed unit test
         // --end-->
 
         assertEquals(expected, derived.getName());
@@ -132,7 +138,8 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expected = null;
+        final String expected = "BaseClassWithName";
+        //passed at first
         // --end-->
 
         assertEquals(expected, derived.getName());
@@ -145,9 +152,10 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final Optional<Boolean> expectedResult1 = Optional.empty();
-        final Optional<Boolean> expectedResult2 = Optional.empty();
-        final Optional<Boolean> expectedResult3 = Optional.empty();
+        // nested NestedDerivedClassWithName
+        final Optional<Boolean> expectedResult1 = Optional.of(Boolean.TRUE);
+        final Optional<Boolean> expectedResult2 = Optional.of(Boolean.TRUE);
+        final Optional<Boolean> expectedResult3 = Optional.of(Boolean.TRUE);
         // --end-->
 
         assertEquals(expectedResult1.get(), nested instanceof NestedDerivedClassWithName);
@@ -162,8 +170,10 @@ class InheritanceTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final Optional<Boolean> expectedResult1 = Optional.empty();
-        final Optional<Boolean> expectedResult2 = Optional.empty();
+        final Optional<Boolean> expectedResult1 = Optional.of(Boolean.TRUE);
+        //integer casted as int so true
+        final Optional<Boolean> expectedResult2 = Optional.of(Boolean.FALSE);
+        //integer not casted as long so false
         // --end-->
 
         assertEquals(expectedResult1.get(), integer instanceof Integer );
@@ -174,7 +184,6 @@ class InheritanceTest {
     @Test
     void should_write_perfect_equals_1() {
         PersonForEquals person = new PersonForEquals("James", (short) 1990);
-
         assertTrue(person.equals(person));
     }
 
@@ -204,7 +213,6 @@ class InheritanceTest {
     @Test
     void should_write_perfect_equals_4() {
         PersonForEquals person = new PersonForEquals("James", (short) 1990);
-
         assertFalse(person.equals(null));
     }
 

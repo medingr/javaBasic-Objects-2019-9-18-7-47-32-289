@@ -36,7 +36,19 @@ public class PersonForEquals {
     public boolean equals(Object obj) {
         // TODO: please modify the following code to pass the test
         // <--start
-        throw new NotImplementedException();
+        // to continue still fail at should_write_perfect_equals_2
+        if( (this  == obj )  ) {
+            return true;
+        }
+        if (!(obj instanceof PersonForEquals)) {
+            return false;
+        }
+        if( obj == null )
+            return false;
+
+        else return false;
+
+//       throw new NotImplementedException();
         // --end-->
     }
 
