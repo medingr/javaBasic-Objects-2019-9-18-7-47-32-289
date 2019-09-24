@@ -51,9 +51,9 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expectedName = "What";
-        final int expectedYearOfBirth = 479;
-        final LocalDate expectedRegisteredDate = LocalDate.now();
+        final String expectedName =  null;
+        final int expectedYearOfBirth = 0;
+        final LocalDate expectedRegisteredDate = null;
         // --end-->
 
         assertEquals(expectedName, instance.getName());
@@ -164,7 +164,8 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String[] expected = null;
+        final String[] expected = {"Field Initializer","Initialization Block","Constructor with argument"
+                ,"Default constructor"};
         // --end-->
 
         assertArrayEquals(expected, logs);
@@ -176,7 +177,7 @@ class ObjectTest {
 
         // TODO: please modify the following code to pass the test
         // <--start
-        final String expected = "1\\n+ 2\\n + 3\\n";
+        final String expected = "1\n2\n3\n";
         // --end-->
 
         assertEquals(expected, message);
